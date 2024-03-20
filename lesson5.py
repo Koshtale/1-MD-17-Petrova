@@ -10,8 +10,9 @@ def truefalse():
     day = int(input("Введите день:"))
     month = int(input("Введите месяц:"))
     year = int(input("Введите год:"))
+    yearnumber = year % 100
 
-    if day * month != year:
+    if day * month != yearnumber:
         print("Число не магическое")
         return True
     else:
@@ -19,15 +20,15 @@ def truefalse():
         return False
 
 def ticket():
-    ticknumber = int(input("Введите номер билета:"))
+    ticknumber = str(input("Введите номер билета:"))
     firstthree = ticknumber[:3]
     lastthree = ticknumber [3:]
     summfirst = 0
     summlast = 0
     for x in firstthree:
-        summfirst = summfirst + x
+        summfirst +=  int(x)
     for x in lastthree:
-        summlast = summlast + x
+        summlast += int(x)
     if summfirst == summlast:
         print("Номер ", ticknumber , " - счастливый")
     else:
