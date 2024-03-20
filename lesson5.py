@@ -7,12 +7,9 @@ def dvesty(number):
     res = 200 / number
     print("Ответ равен:", res)
 def truefalse():
-    day = int(input("Введите день:"))
-    month = int(input("Введите месяц:"))
-    year = int(input("Введите год:"))
-    yearnumber = year % 100
-
-    if day * month != yearnumber:
+    date = str(input("Введите дату:"))
+    aaa = date.split('.')
+    if int(aaa[0]) * int(aaa[1]) != int(aaa[2]):
         print("Число не магическое")
         return True
     else:
