@@ -1,0 +1,63 @@
+def vivesty():
+    from PIL import Image
+    image = Image.open('mem.png')
+    image.show()
+def izmeni():
+    from PIL import Image
+    image = Image.open('mem.png')
+    res_img = image.reduce(3)
+    res_img.show()
+    res_img.save("mem_pomenbshe.png")
+    res_img2 = (image.transpose(Image.FLIP_TOP_BOTTOM))
+    res_img2.show()
+    res_img2.save("mem_vertic.png")
+    res_img3 = (image.transpose(Image.FLIP_LEFT_RIGHT))
+    res_img3.show()
+    res_img3.save("mem_horiz.png")
+def filtr():
+    from PIL import Image, ImageFilter
+    one = Image.open('1.jpg')
+    two = Image.open('2.jpg')
+    three = Image.open('3.jpg')
+    four = Image.open('4.jpg')
+    five = Image.open('5.jpg')
+    IMG1 = one.filter(ImageFilter.SHARPEN)
+    IMG1.show()
+    IMG1.save("1.2.png")
+    IMG2 = two.filter(ImageFilter.EMBOSS)
+    IMG2.show()
+    IMG2.save("2.2.png")
+    IMG3 = three.filter(ImageFilter.SMOOTH)
+    IMG3.show()
+    IMG3.save("3.2.png")
+    IMG4 = four.filter(ImageFilter.CONTOUR)
+    IMG4.show()
+    IMG4.save("4.2.png")
+    IMG5 = five.filter(ImageFilter.DETAIL)
+    IMG5.show()
+    IMG5.save("5.2.png")
+
+def vodyanoi():
+    print("такой задачи нет.")
+
+task=int(input("Какую задачу решить?"))
+match task:
+    case 1:
+        vivesty()
+    case 2:
+        izmeni()
+    case 3:
+        filtr()
+    case 4:
+        vodyanoi()
+    case _:
+        print("такой задачи нет.")
+
+
+7.1) Подготовьте любой графический файл для выполнения практической работы. Напишите программу, которая открывает и выводит этот файл на экран. Получите и выведите в консоль информацию о размере изображения, его формате, его цветовой модели.
+
+7.2) Напишите программу, которая создаёт уменьшенную в три раза копию изображения. Получите горизонтальный и вертикальный зеркальный образ изображения. Сохраните изображения в текущую папку под новым именем.
+
+7.3) Подготовьте 5 графических файлов с именами 1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg. Напишите программу, которая применит ко всем этим файлам сразу любой фильтр (кроме размытия, т.к. он рассматривался на лекции). Сохраните изображения в новую папку под новыми именами.
+
+7.4) Напишите программу, которая добавляет на изображение водяной знак. Можно тоже применять сразу к нескольким изображениям.
