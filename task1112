@@ -1,0 +1,47 @@
+class Restaurant:
+    def __init__(self, restname, kuhnya, rating):
+        self.restname = restname
+        self.kuhnya = kuhnya
+        self.rating = rating
+
+    def describe(self):
+        print("Название Ресторана: " + self.restname.title())
+        print("Кухня: " + self.kuhnya.title())
+        print("Рейтинг: " + self.rating.title())
+
+    def open(self):
+        print("Ресторан " + self.restname.title() + " открыт!")
+
+    def changerate(self):
+        rating = input(int("Введите оценку"))
+
+
+H_rest = Restaurant("Horosho", "домашняя", "4")
+A_rest = Restaurant("Samurai", "восточная", "3")
+K_rest = Restaurant("Kinza", "вегетерианская", "5")
+K_rest.describe()
+K_rest.open()
+H_rest.describe()
+A_rest.describe()
+H_rest.changerate()
+
+class IceCream (Restaurant):
+    def _init_(self, flavors, location, worktime):
+        self.flavors = flavors
+        self.location = location
+        self.worktime = worktime
+
+        def addflavour(self):
+            add = input(str('Какой сорт вы хотите добавить?'))
+            self.flavors = str(flavors, " ", add)
+        def showflavors(self):
+            print("Сорта мороженого: ", flavors)
+        def flavorsabscence(self):
+            vopros = input(str("Какое мороженое вас интересует?"))
+            if vopros in flavors:
+                print(vopros, " подается в нашем ресторане!")
+            else:
+                print("Такого, к сожалению нет")
+
+IceCreamStand = IceCream('Морожница', "кафе-морожение", "4", restname="10-21", location="str31", flavors="ванильное, шоколадное, клубничное, фисташковое")
+IceCreamStand.showflavour()
