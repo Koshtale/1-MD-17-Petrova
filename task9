@@ -1,0 +1,24 @@
+import os
+from PIL import Image, ImageFilter
+from pathlib import Path
+def task12():
+	os.mkdir("papka6")
+	files = os. listdir("papka")
+	for i in files:
+	    if Path(1).suffix == ".jpg":
+		    image = Image.open(os.path.join("papka", i))
+		    img_smooth = image.filter (ImageFilter.DETAIL)
+		    img_smooth.save(f"filter({1}).jpg")
+		    f = open(os.path.join("papka6", f"fitter({1}).jpg"), "a")
+		    os.remove(f"filter({1}).jpg")
+	    else:
+		    f = open(os.path.join("papka6", i), "a")
+
+
+def task3():
+	print("Нужно купить:")
+	with open ("zadanie.csv", "r") as file:
+		filereader = csv.reader(file)
+		for row in filereader:
+			name, kol, price = " " .join(row).split(";")
+			print (f"{name} - {kol} шт. за {price} рублей.")
